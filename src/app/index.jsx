@@ -10,6 +10,7 @@ export default function App() {
 
   return (
     <div className="wrapper">
+      <h1>Available times {selectedDay ? `for ${selectedDay}` : null}</h1>
       <DayNames
         days={days}
         selectedDay={selectedDay}
