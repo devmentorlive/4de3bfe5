@@ -6,6 +6,17 @@ import "./styles.css";
 
 export default function App() {
   const [selectedDay, setSelectedDay] = useState(null);
+  const blocks = days[selectedDay];
+
+  function getSlots(block) {
+    const slots = [];
+    for (let i = block.from; i < block.to; i++) {
+      slots.push(i);
+    }
+
+    return slots;
+  }
+
   return (
     <div className="wrapper">
       <DayNames
@@ -14,9 +25,15 @@ export default function App() {
         setSelectedDay={setSelectedDay}
       />
 
-      {selectedDay ? (
-        <ul className="hours">{JSON.stringify(days[selectedDay])}</ul>
-      ) : null}
+      <div className="slots">
+        {selectedDay ? (
+          <ul className="horizontal">
+            {blocks.map((block) =>
+              getSlots(block).map((slot) => <li>{slot}</li>)
+            )}
+          </ul>
+        ) : null}
+      </div>
     </div>
   );
 }
