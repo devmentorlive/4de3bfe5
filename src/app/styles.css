@@ -9,7 +9,10 @@ body {
   margin: 0 auto;
   padding: 2rem;
   height: 50%;
-  text-align: center;
+}
+
+ul {
+  list-style: none;
 }
 
 ul.horizontal {
@@ -20,10 +23,19 @@ ul.horizontal {
 ul.horizontal li {
   display: inline-block;
   margin-right: 8px;
+}
+
+ul li.pill {
+  margin-bottom: 1rem;
   padding: 4px 8px;
   border: 1px solid grey;
   border-radius: 4px;
   font-size: 18px;
+}
+
+ul.slots li.pill {
+  width: 33%;
+  white-space: nowrap;
 }
 
 ul.horizontal li:last-child {
@@ -35,6 +47,16 @@ ul.horizontal li.selected {
   color: white;
 }
 
+.day-names,
 .slots {
-  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.slots li {
+  max-width: 100px;
+  text-align: center;
+  margin: 0 8px;
 }

@@ -19,9 +19,9 @@ export default function Slots({ days, selectedDay }) {
   return (
     <div className="slots">
       {selectedDay ? (
-        <ul className="horizontal">
+        <ul className="slots">
           {blocks.map((block) =>
-            getSlots(block).map((slot) => <li>{slot}</li>)
+            getSlots(block).map((slot) => <li className="pill">{slot}</li>)
           )}
         </ul>
       ) : null}

@@ -15,7 +15,7 @@ export default function App() {
         selectedDay={selectedDay}
         setSelectedDay={setSelectedDay}
       />
-
+      <hr />
       <Slots days={days} selectedDay={selectedDay} />
     </div>
   );
