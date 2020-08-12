@@ -1,0 +1,36 @@
+html,
+body {
+  background-color: rgb(205, 205, 205);
+}
+
+.wrapper {
+  background-color: white;
+  width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 50%;
+  text-align: center;
+}
+
+ul.days {
+  margin: 0;
+  padding: 0;
+}
+
+ul.days li {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 4px 8px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+ul.days li:last-child {
+  margin-right: 0;
+}
+
+ul.days li.selected {
+  background-color: rgb(128, 174, 254);
+  color: white;
+}
