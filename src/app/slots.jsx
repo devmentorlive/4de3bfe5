@@ -13,21 +13,38 @@ function getSlots(block) {
   return slots;
 }
 
-function Range({ days, selectedDay }) {
+function Range({ days, selectedDay, selectedSlot, setSelectedSlot }) {
   const blocks = days[selectedDay];
   return blocks && blocks.length > 0
     ? blocks.map((block) =>
-        getSlots(block).map((range) => <li className="pill">{range}</li>)
+        getSlots(block).map((range) => (
+          <li
+            onClick={() => setSelectedSlot(range)}
+            className={`pill ${selectedSlot === range ? "selected" : null}`}
+          >
+            {range}
+          </li>
+        ))
       )
     : "There are no slots available that day";
 }
 
-export default function Slots({ days, selectedDay }) {
+export default function Slots({
+  days,
+  selectedDay,
+  selectedSlot,
+  setSelectedSlot,
+}) {
   return (
     <div className="slots">
       {selectedDay ? (
         <ul className="slots">
-          <Range days={days} selectedDay={selectedDay} />
+          <Range
+            days={days}
+            selectedDay={selectedDay}
+            selectedSlot={selectedSlot}
+            setSelectedSlot={setSelectedSlot}
+          />
         </ul>
       ) : null}
     </div>

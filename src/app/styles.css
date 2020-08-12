@@ -36,6 +36,7 @@ ul li.pill {
   border: 1px solid grey;
   border-radius: 4px;
   font-size: 18px;
+  cursor: pointer;
 }
 
 ul.slots li.pill {
@@ -47,7 +48,7 @@ ul.horizontal li:last-child {
   margin-right: 0;
 }
 
-ul.horizontal li.selected {
+ul li.selected {
   background-color: rgb(128, 174, 254);
   color: white;
 }

@@ -7,6 +7,7 @@ import "./styles.css";
 
 export default function App() {
   const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedSlot, setSelectedSlot] = useState(null);
 
   return (
     <div className="wrapper">
@@ -17,7 +18,12 @@ export default function App() {
         setSelectedDay={setSelectedDay}
       />
       <hr />
-      <Slots days={days} selectedDay={selectedDay} />
+      <Slots
+        days={days}
+        selectedDay={selectedDay}
+        selectedSlot={selectedSlot}
+        setSelectedSlot={setSelectedSlot}
+      />
     </div>
   );
 }
