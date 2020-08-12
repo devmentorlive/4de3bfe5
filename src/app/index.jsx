@@ -16,6 +16,7 @@ export default function App() {
         days={days}
         selectedDay={selectedDay}
         setSelectedDay={setSelectedDay}
+        setSelectedSlot={setSelectedSlot}
       />
       <hr />
       <Slots
@@ -24,6 +25,15 @@ export default function App() {
         selectedSlot={selectedSlot}
         setSelectedSlot={setSelectedSlot}
       />
+      {selectedSlot ? (
+        <div className="book-now">
+          <hr />
+          <p>
+            You have requested the {selectedSlot} slot on {selectedDay}.
+          </p>
+          <button>Book this appointment now</button>
+        </div>
+      ) : null}
     </div>
   );
 }
