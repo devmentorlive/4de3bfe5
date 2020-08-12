@@ -29,7 +29,8 @@ export default function App() {
         <div className="book-now">
           <hr />
           <p>
-            You have requested the {selectedSlot} slot on {selectedDay}.
+            You have requested the <strong>{selectedSlot}</strong> slot on{" "}
+            <strong>{selectedDay}</strong>.
           </p>
           <button>Book this appointment now</button>
         </div>

@@ -20,7 +20,9 @@ function Range({ days, selectedDay, selectedSlot, setSelectedSlot }) {
         getSlots(block).map((range) => (
           <li
             onClick={() => setSelectedSlot(range)}
+            onKeyPress={() => setSelectedSlot(range)}
             className={`pill ${selectedSlot === range ? "selected" : null}`}
+            tabIndex={0}
           >
             {range}
           </li>

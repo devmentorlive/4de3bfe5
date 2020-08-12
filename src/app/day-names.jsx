@@ -15,6 +15,11 @@ export default function DayNames({
               setSelectedDay(name);
               setSelectedSlot(null);
             }}
+            onKeyPress={() => {
+              setSelectedDay(name);
+              setSelectedSlot(null);
+            }}
+            tabIndex={0}
             className={`pill ${selectedDay === name ? "selected" : ""}`}
           >
             {name}
