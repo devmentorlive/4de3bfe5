@@ -13,6 +13,10 @@ export default function App() {
         selectedDay={selectedDay}
         setSelectedDay={setSelectedDay}
       />
+
+      {selectedDay ? (
+        <ul className="hours">{JSON.stringify(days[selectedDay])}</ul>
+      ) : null}
     </div>
   );
 }
