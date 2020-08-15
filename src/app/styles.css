@@ -1,0 +1,145 @@
+:root {
+  --black: rgb(58, 58, 58);
+  --grey: rgb(205, 205, 205);
+  --white: rgb(240, 240, 240);
+  --red: rgb(206, 36, 36);
+  --light-blue: rgb(102, 193, 255);
+  background-color: var(--grey);
+  color: var(--black);
+  font-family: "AirbnbCerealLight", sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "AirbnbCerealLight";
+  src: url(/fonts/AirbnbCerealLight.woff);
+}
+
+@font-face {
+  font-family: "AirbnbCerealBook";
+  src: url(/fonts/AirbnbCerealBook.woff);
+}
+
+@font-face {
+  font-family: "AirbnbCerealMedium";
+  src: url(/fonts/AirbnbCerealMedium.woff);
+}
+
+@font-face {
+  font-family: "AirbnbCerealBold";
+  src: url(/fonts/AirbnbCerealBold.woff);
+}
+
+@font-face {
+  font-family: "AirbnbCerealBlack";
+  src: url(/fonts/AirbnbCerealBlack.woff);
+}
+
+.wrapper {
+  background-color: var(--white);
+  width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 50%;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-family: "AirbnbCerealBlack", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+ul.horizontal {
+  margin: 0;
+  padding: 0;
+}
+
+ul.horizontal li {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+ul li.pill {
+  margin-bottom: 1rem;
+  padding: 4px 8px;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+ul.slots li.pill {
+  width: 33%;
+  white-space: nowrap;
+  background-color: var(--white);
+}
+
+ul.horizontal li:last-child {
+  margin-right: 0;
+}
+
+ul li.pill.selected {
+  background-color: var(--red);
+  border: 1px solid var(--blue);
+  color: var(--white);
+}
+
+.slots {
+  background-color: var(--light-blue);
+  padding: 1rem 0 0.5rem;
+  margin: 1rem auto;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.day-names,
+.slots {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.slots li {
+  max-width: 100px;
+  text-align: center;
+  margin: 0 8px;
+}
+
+.book-now {
+  width: 100%;
+  text-align: center;
+}
+
+.book-now p {
+  font-size: 20px;
+}
+
+button {
+  padding: 14px 28px;
+  font-size: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--grey);
+}
+
+button {
+  font-family: "AirbnbCerealBlack", sans-serif;
+}
+
+button:active {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
