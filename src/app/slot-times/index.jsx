@@ -5,17 +5,13 @@ export default function SlotTimes({
   selectedDay,
   selectedSlot,
   setSelectedSlot,
+  get12Hour,
 }) {
   function getSlots(block) {
     const slots = [];
     for (let i = block.from; i < block.to; i++) slots.push(i);
 
     return slots;
-  }
-
-  function get12Hour(hour) {
-    const slot = hour > 12 ? hour - 12 : hour;
-    return slot ? `${slot}pm` : `${slot}am`;
   }
 
   const blocks = schedule[selectedDay];
