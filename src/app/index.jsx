@@ -2,19 +2,11 @@ import React, { useState } from "react";
 import "./styles.css";
 import schedule from "../data/schedule.json";
 import DayNames from "./day-names";
+import SlotTimes from "./slot-times";
 
 export default function App() {
   const [selectedDay, setSelectedDay] = useState(null);
   const [selectedSlot, setSelectedSlot] = useState(null);
-
-  function getSlots(block) {
-    const slots = [];
-    for (let i = block.from; i < block.to; i++) slots.push(i);
-
-    return slots;
-  }
-
-  const blocks = schedule[selectedDay];
 
   return (
     <div className="wrapper">
@@ -23,21 +15,15 @@ export default function App() {
         schedule={schedule}
         selectedDay={selectedDay}
         setSelectedDay={setSelectedDay}
+        setSelectedSlot={setSelectedSlot}
       />
 
-      <ul className="slots">
-        {blocks &&
-          blocks.map((block) =>
-            getSlots(block).map((slot) => (
-              <li
-                className={`pill ${selectedSlot === slot ? "selected" : ""}`}
-                onClick={() => setSelectedSlot(slot)}
-              >
-                {slot}
-              </li>
-            ))
-          )}
-      </ul>
+      <SlotTimes
+        schedule={schedule}
+        selectedDay={selectedDay}
+        selectedSlot={selectedSlot}
+        setSelectedSlot={setSelectedSlot}
+      />
     </div>
   );
 }
