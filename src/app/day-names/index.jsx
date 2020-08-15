@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function DayNames({
-  days,
+  schedule,
   selectedDay,
   setSelectedDay,
   setSelectedSlot,
@@ -9,20 +9,21 @@ export default function DayNames({
   return (
     <div className="day-names">
       <ul className="horizontal">
-        {Object.keys(days).map((name) => (
+        {Object.keys(schedule).map((day) => (
           <li
+            key={day}
             onClick={() => {
-              setSelectedDay(name);
+              setSelectedDay(day);
               setSelectedSlot(null);
             }}
             onKeyPress={() => {
-              setSelectedDay(name);
+              setSelectedDay(day);
               setSelectedSlot(null);
             }}
             tabIndex={0}
-            className={`pill ${selectedDay === name ? "selected" : ""}`}
+            className={`pill ${selectedDay === day ? "selected" : ""}`}
           >
-            {name}
+            {day}
           </li>
         ))}
       </ul>
