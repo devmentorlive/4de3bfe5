@@ -13,6 +13,11 @@ export default function SlotTimes({
     return slots;
   }
 
+  function get12Hour(hour) {
+    const slot = hour > 12 ? hour - 12 : hour;
+    return slot ? `${slot}pm` : `${slot}am`;
+  }
+
   const blocks = schedule[selectedDay];
   return (
     <ul className="slots">
@@ -23,7 +28,7 @@ export default function SlotTimes({
               className={`pill ${selectedSlot === slot ? "selected" : ""}`}
               onClick={() => setSelectedSlot(slot)}
             >
-              {slot}
+              {get12Hour(slot)}
             </li>
           ))
         )}
